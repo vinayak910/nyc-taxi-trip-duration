@@ -2,3 +2,10 @@ numpy
 pandas 
 dvc
 scikit-learn
+matplotlib
+seaborn
+plotly
+scipy
+statsmodels
+jupyter
+notebook
