@@ -57,11 +57,37 @@ stages:
       size: 70794289
     - path: .\src\features\modify_features.py
       hash: md5
-      md5: 84f8d8d707802d63909b0755a8a305fa
-      size: 6053
+      md5: ada111db0e92d38d75a2884ba32aab09
+      size: 5900
     outs:
     - path: .\data\processed\transformations
       hash: md5
       md5: e6da585c2ba21a24e1dc9a8371bba30a.dir
       size: 208192931
+      nfiles: 3
+  build_features:
+    cmd: python .\src\features\build_features.py data/processed/transformations/train.csv
+      data/processed/transformations/val.csv data/processed/transformations/test.csv
+    deps:
+    - path: .\data\processed\transformations\test.csv
+      hash: md5
+      md5: 2b77a8e04bfa86ff4e9e7f475c34f001
+      size: 56394464
+    - path: .\data\processed\transformations\train.csv
+      hash: md5
+      md5: 47d7dfa5dfc178b386b3b0aa289c835e
+      size: 121434341
+    - path: .\data\processed\transformations\val.csv
+      hash: md5
+      md5: 8b87a168e5f70241a95642f6d6d2a004
+      size: 30364126
+    - path: .\src\features\build_features.py
+      hash: md5
+      md5: 8e0383bd56a72aff2fac9318ae2d78b6
+      size: 2236
+    outs:
+    - path: .\data\processed\build-features
+      hash: md5
+      md5: 56d36951dfce4d264c7a9c660c594b0b.dir
+      size: 331246740
       nfiles: 3

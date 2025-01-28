@@ -37,10 +37,6 @@ def drop_above_two_hundred_minutes(df: pd.DataFrame , target_column:str)->pd.Dat
         raise ValueError("Outlier target values not removed from data")
 
 def plot_target(df:pd.DataFrame , target_column: str , save_path:Path):
-    root_path_copy = root_path
-    my_logger.save_logs(f'Plot path: {PLOT_PATH}')
-    my_logger.save_logs(f"TOTAL - {root_path_copy / PLOT_PATH} ")
-
     sns.kdeplot(data = df , x = target_column)
     plt.title(f"Distribution of {target_column}")
     plt.savefig(save_path)
